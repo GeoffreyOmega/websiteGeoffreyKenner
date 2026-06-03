@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filmography — Geoffrey Kenner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Josefin+Sans:wght@100;200;300&family=Cormorant+Garamond:ital,wght@0,100;0,200;0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">GK</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="filmography.html" class="active">Filmography</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="filmography-hero">
+  <!-- Film perforations -->
+  <div class="hero-perf hero-perf-left">
+    <div class="hero-perf-track" id="heroPerfLeft"></div>
+  </div>
+  <div class="hero-perf hero-perf-right">
+    <div class="hero-perf-track" id="heroPerfRight"></div>
+  </div>
+
+  <div class="bokeh-container">
+    <div class="bokeh bokeh-1"></div>
+    <div class="bokeh bokeh-4"></div>
+  </div>
+  <div class="halation-hero"></div>
+
+  <div class="frame-corner frame-corner-tl" style="top:4.5rem;"></div>
+  <div class="frame-corner frame-corner-tr" style="top:4.5rem;"></div>
+  <div class="frame-corner frame-corner-bl"></div>
+  <div class="frame-corner frame-corner-br"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">director &amp; director of photography</p>
+    <h1 class="hero-name">GEOFFREY KENNER</h1>
+    <div class="hero-cmy">
+      <div class="cmy-circle cmy-c"></div>
+      <div class="cmy-circle cmy-m"></div>
+      <div class="cmy-circle cmy-y"></div>
+    </div>
+    <p class="hero-eyebrow" style="animation-delay:1.1s; margin-bottom:0; letter-spacing:0.35em;">Filmography</p>
+  </div>
+</section>
+
+<!-- FILM STRIP BAR -->
+<div class="film-strip">
+  <div class="film-optics">
+    <!-- beam splitter -->
+    <svg class="optic-icon" viewBox="0 0 64 40" aria-hidden="true">
+      <line x1="2" y1="20" x2="62" y2="20"/>
+      <polyline points="56,16 62,20 56,24"/>
+      <line x1="32" y1="20" x2="32" y2="3"/>
+      <polyline points="28,8 32,3 36,8"/>
+      <rect x="20" y="8" width="24" height="24"/>
+      <line x1="20" y1="32" x2="44" y2="8"/>
+    </svg>
+    <span class="optic-sep"></span>
+    <!-- CMY circles -->
+    <svg class="optic-icon" viewBox="0 0 56 40" aria-hidden="true">
+      <circle class="oc-c" cx="22" cy="24" r="10"/>
+      <circle class="oc-y" cx="34" cy="24" r="10"/>
+      <circle class="oc-m" cx="28" cy="15" r="10"/>
+    </svg>
+    <span class="optic-sep"></span>
+    <!-- tone curve -->
+    <svg class="optic-icon" viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="4" y="4" width="32" height="32"/>
+      <line class="optic-faint" x1="4" y1="36" x2="36" y2="4"/>
+      <path d="M5,34 C13,33 14,27 20,20 S27,7 35,6"/>
+    </svg>
+    <span class="optic-sep"></span>
+    <!-- lens cross-section -->
+    <svg class="optic-icon" viewBox="0 0 72 40" aria-hidden="true">
+      <line class="optic-axis" x1="2" y1="20" x2="70" y2="20"/>
+      <path d="M16,6 Q9,20 16,34"/>
+      <path d="M16,6 Q23,20 16,34"/>
+      <path d="M37,8 Q41,20 37,32"/>
+      <path d="M43,8 Q39,20 43,32"/>
+      <line x1="37" y1="8" x2="43" y2="8"/>
+      <line x1="37" y1="32" x2="43" y2="32"/>
+      <path d="M62,9 Q56,20 62,31"/>
+      <path d="M62,9 Q68,20 62,31"/>
+    </svg>
+    <span class="optic-sep"></span>
+    <!-- CMY circles -->
+    <svg class="optic-icon" viewBox="0 0 56 40" aria-hidden="true">
+      <circle class="oc-c" cx="22" cy="24" r="10"/>
+      <circle class="oc-y" cx="34" cy="24" r="10"/>
+      <circle class="oc-m" cx="28" cy="15" r="10"/>
+    </svg>
+  </div>
+</div>
+
+<!-- FILMOGRAPHY -->
+<section class="filmography-section">
+  <div class="filmography-inner">
+
+    <!-- FEATURE FILM -->
+    <div class="filmography-category fade-in">
+      <h2 class="filmography-category-title">Feature Film</h2>
+      <table class="filmography-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="film-year">2026</td>
+            <td class="film-title">The Cradle of Void</td>
+            <td class="film-director">Geoffrey Kenner</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-director">Director</span>
+              <span class="film-role-tag role-dp">DP</span>
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2026</td>
+            <td class="film-title">VIA</td>
+            <td class="film-director">Alexandre Galmard</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2026</td>
+            <td class="film-title">Rituels</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2026</td>
+            <td class="film-title">Et j'ai trouvé un arbre…</td>
+            <td class="film-director">Benoît Belvans</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2023</td>
+            <td class="film-title">Assemblage</td>
+            <td class="film-director">Sofiene Mamdi</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2023</td>
+            <td class="film-title">Le Temps d'une Soirée</td>
+            <td class="film-director">Dimitri Arnaud</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2023</td>
+            <td class="film-title">A Million Days</td>
+            <td class="film-director">Mitch Jenkins</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-vfx">VFX Artist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2022</td>
+            <td class="film-title">The End</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2022</td>
+            <td class="film-title">Voyage en têtes étrangères</td>
+            <td class="film-director">Antonio Amaral</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">Inventing The Future</td>
+            <td class="film-director">Isiah Medina</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-addphoto">Additional Photography</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">Viens dans ma vie…</td>
+            <td class="film-director">Marino Giardinelli</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">Natura</td>
+            <td class="film-director">Mickael Perret</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">Spirale</td>
+            <td class="film-director">Sofiene Mamdi</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2019</td>
+            <td class="film-title">D'Étoiles en étoiles</td>
+            <td class="film-director">Antonio Amaral</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2019</td>
+            <td class="film-title">Une Arbitre, un destin</td>
+            <td class="film-director">Luca Daï Cibin</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2019</td>
+            <td class="film-title">Pau</td>
+            <td class="film-director">Alexandre Leter</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2017</td>
+            <td class="film-title">Le Koro du Bakoro</td>
+            <td class="film-director">Simplice Ganou</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FILM STRIP DIVIDER -->
+    <div class="film-strip" style="margin: 0 -2rem 5rem; background:#1a1208;">
+      <div class="film-optics" style="color: rgba(232,201,122,0.4);">
+        <!-- lens cross-section -->
+        <svg class="optic-icon" viewBox="0 0 72 40" aria-hidden="true">
+          <line class="optic-axis" x1="2" y1="20" x2="70" y2="20"/>
+          <path d="M16,6 Q9,20 16,34"/>
+          <path d="M16,6 Q23,20 16,34"/>
+          <path d="M37,8 Q41,20 37,32"/>
+          <path d="M43,8 Q39,20 43,32"/>
+          <line x1="37" y1="8" x2="43" y2="8"/>
+          <line x1="37" y1="32" x2="43" y2="32"/>
+          <path d="M62,9 Q56,20 62,31"/>
+          <path d="M62,9 Q68,20 62,31"/>
+        </svg>
+        <span class="optic-sep"></span>
+        <!-- tone curve -->
+        <svg class="optic-icon" viewBox="0 0 40 40" aria-hidden="true">
+          <rect x="4" y="4" width="32" height="32"/>
+          <line class="optic-faint" x1="4" y1="36" x2="36" y2="4"/>
+          <path d="M5,34 C13,33 14,27 20,20 S27,7 35,6"/>
+        </svg>
+        <span class="optic-sep"></span>
+        <!-- CMY circles -->
+        <svg class="optic-icon" viewBox="0 0 56 40" aria-hidden="true">
+          <circle class="oc-c" cx="22" cy="24" r="10"/>
+          <circle class="oc-y" cx="34" cy="24" r="10"/>
+          <circle class="oc-m" cx="28" cy="15" r="10"/>
+        </svg>
+        <span class="optic-sep"></span>
+        <!-- beam splitter -->
+        <svg class="optic-icon" viewBox="0 0 64 40" aria-hidden="true">
+          <line x1="2" y1="20" x2="62" y2="20"/>
+          <polyline points="56,16 62,20 56,24"/>
+          <line x1="32" y1="20" x2="32" y2="3"/>
+          <polyline points="28,8 32,3 36,8"/>
+          <rect x="20" y="8" width="24" height="24"/>
+          <line x1="20" y1="32" x2="44" y2="8"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- SHORT FILM -->
+    <div class="filmography-category fade-in">
+      <h2 class="filmography-category-title">Short Film</h2>
+      <table class="filmography-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="film-year">2024</td>
+            <td class="film-title">Link</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2024</td>
+            <td class="film-title">Babel</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2023</td>
+            <td class="film-title">Le Grand Gagnant</td>
+            <td class="film-director">Benoît Belvans</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2022</td>
+            <td class="film-title">Dr Harriet's 4</td>
+            <td class="film-director">Leon Müntjes</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2022</td>
+            <td class="film-title">Origine-Z</td>
+            <td class="film-director">Raphaël Kichenerama</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2022</td>
+            <td class="film-title">Ordinary Oddity</td>
+            <td class="film-director">Haein Cho</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2022</td>
+            <td class="film-title">Gowry</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2022</td>
+            <td class="film-title">Nila</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2022</td>
+            <td class="film-title">Final Cut</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">Troubadours Célestes</td>
+            <td class="film-director">Hervine De Boodt</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">Noir</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">PYAAR Stories</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">HYPNOS</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">Veilleurs de Jour</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2019</td>
+            <td class="film-title">Amour de Goban</td>
+            <td class="film-director">Romain Pichon-Sintes</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2019</td>
+            <td class="film-title">A Deadly Wish</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2019</td>
+            <td class="film-title">DIL</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2017</td>
+            <td class="film-title">Je suis Josiane</td>
+            <td class="film-director">Sejiane Belmont</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2017</td>
+            <td class="film-title">Paradoxe</td>
+            <td class="film-director">Rongchang Liu</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2017</td>
+            <td class="film-title">La Maison dans l'eau</td>
+            <td class="film-director">Jingyang Sun</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2017</td>
+            <td class="film-title">Sous le Soleil</td>
+            <td class="film-director">Jean Paul de Peretti</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2017</td>
+            <td class="film-title">Nina</td>
+            <td class="film-director">Alexandre Gomes</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2017</td>
+            <td class="film-title">Why Now</td>
+            <td class="film-director">Badou Badara</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2017</td>
+            <td class="film-title">La Beauté cachée des Laids</td>
+            <td class="film-director">Johan Mohamed-Cassim</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2016</td>
+            <td class="film-title">Chamade</td>
+            <td class="film-director">Eva Minko</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2016</td>
+            <td class="film-title">La Cravate Rose</td>
+            <td class="film-director">161 Production</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2015</td>
+            <td class="film-title">Evanouissement Universel</td>
+            <td class="film-director">Geoffrey Kenner</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-director">Director</span>
+              <span class="film-role-tag role-editor">Editor</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+              <span class="film-role-tag role-vfx">VFX</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2015</td>
+            <td class="film-title">X37a5</td>
+            <td class="film-director">Patrice Galmard</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2014</td>
+            <td class="film-title">Coup de Blues</td>
+            <td class="film-director">Patrice Galmard</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2013</td>
+            <td class="film-title">Io is dead, long live Jupiter</td>
+            <td class="film-director">Geoffrey Kenner</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-director">Director</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2010</td>
+            <td class="film-title">Through the dreams of a Cat</td>
+            <td class="film-director">Geoffrey Kenner</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-director">Director</span>
+            </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FILM STRIP DIVIDER -->
+    <div class="film-strip" style="margin: 0 -2rem 5rem; background:#1a1208;">
+      <div class="film-optics" style="color: rgba(232,201,122,0.4);">
+        <!-- CMY circles -->
+        <svg class="optic-icon" viewBox="0 0 56 40" aria-hidden="true">
+          <circle class="oc-c" cx="22" cy="24" r="10"/>
+          <circle class="oc-y" cx="34" cy="24" r="10"/>
+          <circle class="oc-m" cx="28" cy="15" r="10"/>
+        </svg>
+        <span class="optic-sep"></span>
+        <!-- beam splitter -->
+        <svg class="optic-icon" viewBox="0 0 64 40" aria-hidden="true">
+          <line x1="2" y1="20" x2="62" y2="20"/>
+          <polyline points="56,16 62,20 56,24"/>
+          <line x1="32" y1="20" x2="32" y2="3"/>
+          <polyline points="28,8 32,3 36,8"/>
+          <rect x="20" y="8" width="24" height="24"/>
+          <line x1="20" y1="32" x2="44" y2="8"/>
+        </svg>
+        <span class="optic-sep"></span>
+        <!-- lens cross-section -->
+        <svg class="optic-icon" viewBox="0 0 72 40" aria-hidden="true">
+          <line class="optic-axis" x1="2" y1="20" x2="70" y2="20"/>
+          <path d="M16,6 Q9,20 16,34"/>
+          <path d="M16,6 Q23,20 16,34"/>
+          <path d="M37,8 Q41,20 37,32"/>
+          <path d="M43,8 Q39,20 43,32"/>
+          <line x1="37" y1="8" x2="43" y2="8"/>
+          <line x1="37" y1="32" x2="43" y2="32"/>
+          <path d="M62,9 Q56,20 62,31"/>
+          <path d="M62,9 Q68,20 62,31"/>
+        </svg>
+        <span class="optic-sep"></span>
+        <!-- tone curve -->
+        <svg class="optic-icon" viewBox="0 0 40 40" aria-hidden="true">
+          <rect x="4" y="4" width="32" height="32"/>
+          <line class="optic-faint" x1="4" y1="36" x2="36" y2="4"/>
+          <path d="M5,34 C13,33 14,27 20,20 S27,7 35,6"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- MUSIC VIDEO -->
+    <div class="filmography-category fade-in">
+      <h2 class="filmography-category-title">Music Video</h2>
+      <table class="filmography-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="film-year">2024</td>
+            <td class="film-title">Noeud</td>
+            <td class="film-director">Roxane Tessier</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2024</td>
+            <td class="film-title">Slut Shaming</td>
+            <td class="film-director">Roxane Tessier</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2024</td>
+            <td class="film-title">Comme BB</td>
+            <td class="film-director">Roxane Tessier</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2023</td>
+            <td class="film-title">Le Diable Au Corps</td>
+            <td class="film-director">Roxane Tessier</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+              <span class="film-role-tag role-colorist">Colorist</span>
+            </div></td>
+          </tr>
+          <tr>
+            <td class="film-year">2021</td>
+            <td class="film-title">Danitsa — Dos Casse</td>
+            <td class="film-director">Thibaud Desmergers</td>
+            <td><div class="film-roles">
+              <span class="film-role-tag role-dp">Cinematographer</span>
+            </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-line"></div>
+    <span>© 2026 Geoffrey Kenner &nbsp;·&nbsp; All Rights Reserved</span>
+    <div class="footer-line"></div>
+  </div>
+</footer>
+
+<script>
+  // Fade-in observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ── Film perforation: populate holes ──
+  const HOLE_COUNT = 90;
+  ['heroPerfLeft', 'heroPerfRight'].forEach(id => {
+    const track = document.getElementById(id);
+    if (!track) return;
+    for (let i = 0; i < HOLE_COUNT; i++) {
+      const hole = document.createElement('div');
+      hole.className = 'hero-perf-hole';
+      track.appendChild(hole);
+    }
+  });
+
+  // ── Animate hero perforations on scroll ──
+  const heroSection   = document.querySelector('.filmography-hero');
+  const heroPerfLeft  = document.getElementById('heroPerfLeft');
+  const heroPerfRight = document.getElementById('heroPerfRight');
+
+  function updatePerforations() {
+    if (heroSection && heroPerfLeft && heroPerfRight) {
+      const rect = heroSection.getBoundingClientRect();
+      if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+        const scrolled = Math.max(0, -rect.top);
+        const offset = -(scrolled * 0.45 % 380);
+        heroPerfLeft.style.transform  = `translateX(-50%) translateY(${offset}px)`;
+        heroPerfRight.style.transform = `translateX(-50%) translateY(${offset}px)`;
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updatePerforations, { passive: true });
+  updatePerforations();
+</script>
+</body>
+</html>
