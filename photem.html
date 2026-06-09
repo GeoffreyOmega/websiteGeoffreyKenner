@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Photem — Geoffrey Kenner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Josefin+Sans:wght@100;200;300&family=Cormorant+Garamond:ital,wght@0,100;0,200;0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="photem">
+
+<div class="starfield"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">GK</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="filmography.html">Filmography</a></li>
+    <li><a href="photem.html" class="active">Photem</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="photem-hero">
+  <div class="frame-corner frame-corner-tl" style="top:4.5rem;"></div>
+  <div class="frame-corner frame-corner-tr" style="top:4.5rem;"></div>
+  <div class="frame-corner frame-corner-bl"></div>
+  <div class="frame-corner frame-corner-br"></div>
+
+  <p class="hero-eyebrow" style="opacity:0;">photography &amp; poem</p>
+  <h1 class="hero-name" style="opacity:0;">PHOTEM</h1>
+  <p class="photem-sub">where the still frame keeps its silence — and a few lines break it.</p>
+</section>
+
+<!-- COSMOS DIVIDER -->
+<div class="film-strip cosmos-strip">
+  <div class="film-optics">
+    <!-- planetary orbit -->
+    <svg class="optic-icon" viewBox="0 0 64 40" aria-hidden="true">
+      <circle cx="32" cy="20" r="4"/>
+      <ellipse cx="32" cy="20" rx="28" ry="11"/>
+      <circle cx="60" cy="20" r="2.2"/>
+    </svg>
+    <span class="optic-sep"></span>
+    <!-- star chart / constellation -->
+    <svg class="optic-icon" viewBox="0 0 56 40" aria-hidden="true">
+      <polyline points="6,30 16,12 28,22 40,8 50,26"/>
+      <circle cx="6" cy="30" r="1.6"/>
+      <circle cx="16" cy="12" r="1.6"/>
+      <circle cx="28" cy="22" r="1.6"/>
+      <circle cx="40" cy="8" r="1.6"/>
+      <circle cx="50" cy="26" r="1.6"/>
+    </svg>
+    <span class="optic-sep"></span>
+    <!-- magnetic field / dipole -->
+    <svg class="optic-icon" viewBox="0 0 56 40" aria-hidden="true">
+      <line x1="28" y1="6" x2="28" y2="34"/>
+      <path d="M28,9 C12,12 12,28 28,31"/>
+      <path d="M28,9 C44,12 44,28 28,31"/>
+      <path d="M28,4 C6,9 6,31 28,36"/>
+      <path d="M28,4 C50,9 50,31 28,36"/>
+    </svg>
+    <span class="optic-sep"></span>
+    <!-- ringed planet -->
+    <svg class="optic-icon" viewBox="0 0 56 40" aria-hidden="true">
+      <circle cx="28" cy="20" r="9"/>
+      <ellipse cx="28" cy="20" rx="22" ry="6" transform="rotate(-18 28 20)"/>
+    </svg>
+    <span class="optic-sep"></span>
+    <!-- star chart -->
+    <svg class="optic-icon" viewBox="0 0 56 40" aria-hidden="true">
+      <polyline points="6,12 18,26 30,14 44,30 50,16"/>
+      <circle cx="6" cy="12" r="1.6"/>
+      <circle cx="18" cy="26" r="1.6"/>
+      <circle cx="30" cy="14" r="1.6"/>
+      <circle cx="44" cy="30" r="1.6"/>
+      <circle cx="50" cy="16" r="1.6"/>
+    </svg>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="photem-gallery" id="gallery"></div>
+
+<!-- LIGHTBOX -->
+<div class="photem-lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">Close ✕</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-figure">
+      <img id="lightboxImg" src="" alt="">
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-line"></div>
+    <span>© 2026 Geoffrey Kenner &nbsp;·&nbsp; All Rights Reserved</span>
+    <div class="footer-line"></div>
+  </div>
+</footer>
+
+<script>
+  /* ════════════════════════════════════════════════════════════
+     ║  PHOTEM GALLERY CONFIG                                      ║
+     ║  Add one entry per photo: paste the image URL into `src`    ║
+     ║  and give it a short `title`.                               ║
+     ════════════════════════════════════════════════════════════ */
+  const PHOTOS = [
+    { src: "https://i.postimg.cc/BQBHN2g3/IMG-0300.webp", title: "IMG 0300" },
+    { src: "https://i.postimg.cc/g0nhYQP2/IMG-0304.webp", title: "IMG 0304" },
+    { src: "https://i.postimg.cc/nzSwX6X2/IMG-0345.webp", title: "IMG 0345" },
+    { src: "https://i.postimg.cc/Kzps1d1J/IMG-0346.webp", title: "IMG 0346" },
+    { src: "https://i.postimg.cc/B67wjdjN/IMG-0347.webp", title: "IMG 0347" },
+    { src: "https://i.postimg.cc/9MgNDvDp/IMG-0349.webp", title: "IMG 0349" },
+    { src: "https://i.postimg.cc/2yq9h2Wc/IMG-0362.webp", title: "IMG 0362" },
+    { src: "https://i.postimg.cc/MHc3VdBg/IMG-0365.webp", title: "IMG 0365" },
+    { src: "https://i.postimg.cc/QCBY107R/IMG-0445.webp", title: "IMG 0445" },
+    { src: "https://i.postimg.cc/C5Zrkm83/IMG-0446.webp", title: "IMG 0446" },
+    { src: "https://i.postimg.cc/j2GgXPQY/IMG-0450.webp", title: "IMG 0450" },
+    { src: "https://i.postimg.cc/MHhPDVbS/IMG-0451.webp", title: "IMG 0451" },
+    { src: "https://i.postimg.cc/cCV9mwM0/IMG-0503.webp", title: "IMG 0503" },
+    { src: "https://i.postimg.cc/cCV9mwM1/IMG-0509.webp", title: "IMG 0509" },
+    { src: "https://i.postimg.cc/Y0Jn3Yfv/IMG-0510.webp", title: "IMG 0510" },
+    { src: "https://i.postimg.cc/d3zHBrm7/IMG-0512.webp", title: "IMG 0512" },
+    { src: "https://i.postimg.cc/2yPcwhFb/IMG-0513.webp", title: "IMG 0513" },
+    { src: "https://i.postimg.cc/nr6RkBYQ/IMG-0516.webp", title: "IMG 0516" },
+    { src: "https://i.postimg.cc/PJB34Yzw/IMG-0517.webp", title: "IMG 0517" },
+    { src: "https://i.postimg.cc/59GRbWcK/IMG-0526.webp", title: "IMG 0526" },
+    { src: "https://i.postimg.cc/c1jb0Gqb/IMG-0569.webp", title: "IMG 0569" },
+    { src: "https://i.postimg.cc/VsTVmPyh/IMG-0576.webp", title: "IMG 0576" },
+    { src: "https://i.postimg.cc/nV5Ppf8g/IMG-0580.webp", title: "IMG 0580" },
+    { src: "https://i.postimg.cc/c1jb0GqP/IMG-0582.webp", title: "IMG 0582" },
+    { src: "https://i.postimg.cc/RC8D4x5r/IMG-0583.webp", title: "IMG 0583" },
+    { src: "https://i.postimg.cc/3r6cYQ5Q/IMG-0589.webp", title: "IMG 0589" },
+    { src: "https://i.postimg.cc/59GRbWdJ/IMG-0590.webp", title: "IMG 0590" },
+    { src: "https://i.postimg.cc/3r6cYQ5T/IMG-0627.webp", title: "IMG 0627" },
+    { src: "https://i.postimg.cc/qBY54HVJ/IMG-0632.webp", title: "IMG 0632" },
+    { src: "https://i.postimg.cc/dQXxwcPQ/IMG-0638.webp", title: "IMG 0638" },
+    { src: "https://i.postimg.cc/qBY54HVv/IMG-0640.webp", title: "IMG 0640" },
+    { src: "https://i.postimg.cc/sf8NsCdX/IMG-0641.webp", title: "IMG 0641" },
+    { src: "https://i.postimg.cc/xj74nVDX/IMG-0643.webp", title: "IMG 0643" },
+    { src: "https://i.postimg.cc/KcVHxhSk/IMG-0645.webp", title: "IMG 0645" },
+    { src: "https://i.postimg.cc/8k30NgQf/IMG-0651.webp", title: "IMG 0651" },
+    { src: "https://i.postimg.cc/rFrYpZMV/IMG-0652.webp", title: "IMG 0652" },
+    { src: "https://i.postimg.cc/J4kdhYM7/IMG-0654.webp", title: "IMG 0654" },
+    { src: "https://i.postimg.cc/NfHP0CBf/IMG-0655.webp", title: "IMG 0655" },
+    { src: "https://i.postimg.cc/jd7kj3tj/IMG-0656.webp", title: "IMG 0656" },
+    { src: "https://i.postimg.cc/gkZB0tmj/IMG-0666.webp", title: "IMG 0666" },
+    { src: "https://i.postimg.cc/CLq6KrSZ/IMG-0667.webp", title: "IMG 0667" },
+    { src: "https://i.postimg.cc/YqWySDMW/IMG-0668.webp", title: "IMG 0668" },
+    { src: "https://i.postimg.cc/ZKdDqs4p/IMG-0745.webp", title: "IMG 0745" },
+    { src: "https://i.postimg.cc/GhySpgdY/IMG-0747.webp", title: "IMG 0747" },
+    { src: "https://i.postimg.cc/zXgPf28C/IMG-0748.webp", title: "IMG 0748" },
+    { src: "https://i.postimg.cc/YqWySDM8/IMG-0751.webp", title: "IMG 0751" },
+    { src: "https://i.postimg.cc/J4kdhYMp/IMG-0758.webp", title: "IMG 0758" },
+    { src: "https://i.postimg.cc/T3vN5j3j/IMG-0765.webp", title: "IMG 0765" },
+    { src: "https://i.postimg.cc/Hk1v80k4/IMG-0767.webp", title: "IMG 0767" },
+    { src: "https://i.postimg.cc/YCBDLNCz/IMG-0835.webp", title: "IMG 0835" },
+    { src: "https://i.postimg.cc/6pxb4Vph/IMG-0862.webp", title: "IMG 0862" },
+    { src: "https://i.postimg.cc/t4Gvnd45/IMG-0863.webp", title: "IMG 0863" },
+    { src: "https://i.postimg.cc/YCBDLNCb/IMG-0865.webp", title: "IMG 0865" },
+    { src: "https://i.postimg.cc/y8Cp3h8r/IMG-0867.webp", title: "IMG 0867" },
+    { src: "https://i.postimg.cc/4xR2Hvxj/IMG-0869.webp", title: "IMG 0869" },
+    { src: "https://i.postimg.cc/rw2ZRGp6/IMG-0873.webp", title: "IMG 0873" },
+    { src: "https://i.postimg.cc/sgCHGP2d/IMG-0874.webp", title: "IMG 0874" },
+    { src: "https://i.postimg.cc/RZ1s733r/IMG-0877.webp", title: "IMG 0877" },
+    { src: "https://i.postimg.cc/jS6gHWW0/IMG-0879.webp", title: "IMG 0879" },
+    { src: "https://i.postimg.cc/7Z1s3CCr/IMG-0881.webp", title: "IMG 0881" },
+    { src: "https://i.postimg.cc/Jz36NyyL/IMG-0883.webp", title: "IMG 0883" },
+    { src: "https://i.postimg.cc/Hk0ZwJJd/IMG-0884.webp", title: "IMG 0884" },
+    { src: "https://i.postimg.cc/Qdg4QBBM/IMG-0886.webp", title: "IMG 0886" },
+    { src: "https://i.postimg.cc/GmP7FBB9/IMG-0888.webp", title: "IMG 0888" },
+    { src: "https://i.postimg.cc/7Z1s3CC2/IMG-0894.webp", title: "IMG 0894" },
+    { src: "https://i.postimg.cc/s2VnwVSX/IMG-0896.webp", title: "IMG 0896" },
+    { src: "https://i.postimg.cc/Dz2CB2s8/IMG-0897.webp", title: "IMG 0897" },
+    { src: "https://i.postimg.cc/xd0st0HJ/IMG-0901.webp", title: "IMG 0901" },
+    { src: "https://i.postimg.cc/g0YMNYRx/IMG-0911.webp", title: "IMG 0911" },
+    { src: "https://i.postimg.cc/jjs8ZsN7/IMG-0913.webp", title: "IMG 0913" },
+    { src: "https://i.postimg.cc/g0YMNYRR/IMG-0965.webp", title: "IMG 0965" },
+    { src: "https://i.postimg.cc/cJsDXsY7/IMG-0967.webp", title: "IMG 0967" },
+    { src: "https://i.postimg.cc/R0MPXMfT/IMG-0968.webp", title: "IMG 0968" },
+    { src: "https://i.postimg.cc/W429X2rW/IMG-0969.webp", title: "IMG 0969" },
+    { src: "https://i.postimg.cc/jjZM1GQh/IMG-0975.webp", title: "IMG 0975" },
+    { src: "https://i.postimg.cc/0NcV4Ldn/IMG-0989.webp", title: "IMG 0989" },
+    { src: "https://i.postimg.cc/HLB6Nf42/IMG-0997.webp", title: "IMG 0997" },
+    { src: "https://i.postimg.cc/rpQfHvCf/IMG-1004.webp", title: "IMG 1004" },
+    { src: "https://i.postimg.cc/6QYMPDLj/IMG-1007.webp", title: "IMG 1007" },
+    { src: "https://i.postimg.cc/s2wTLt9b/IMG-1008.webp", title: "IMG 1008" },
+    { src: "https://i.postimg.cc/TPCtsZqz/IMG-1018.webp", title: "IMG 1018" },
+    { src: "https://i.postimg.cc/0NcV4L01/IMG-1021.webp", title: "IMG 1021" },
+    { src: "https://i.postimg.cc/HLB6Nf9g/IMG-1033.webp", title: "IMG 1033" },
+    { src: "https://i.postimg.cc/MGd9Lhmq/IMG-1035.webp", title: "IMG 1035" },
+    { src: "https://i.postimg.cc/TPCtsZJd/IMG-1041.webp", title: "IMG 1041" },
+    { src: "https://i.postimg.cc/cJXFzVB1/IMG-1042.webp", title: "IMG 1042" },
+    { src: "https://i.postimg.cc/2520tP78/IMG-1136.webp", title: "IMG 1136" },
+    { src: "https://i.postimg.cc/XvQsPTkY/IMG-1137.webp", title: "IMG 1137" },
+    { src: "https://i.postimg.cc/7LmKRpn6/IMG-1138.webp", title: "IMG 1138" },
+    { src: "https://i.postimg.cc/xC86Vt62/IMG-1171.webp", title: "IMG 1171" },
+    { src: "https://i.postimg.cc/ZRnwzVwJ/IMG-1184.webp", title: "IMG 1184" },
+    { src: "https://i.postimg.cc/vBT0w30Y/IMG-1185.webp", title: "IMG 1185" },
+    { src: "https://i.postimg.cc/26y0N205/IMG-1187.webp", title: "IMG 1187" },
+    { src: "https://i.postimg.cc/26y0N206/IMG-1191.webp", title: "IMG 1191" },
+    { src: "https://i.postimg.cc/Hxn61B6j/IMG-1271.webp", title: "IMG 1271" },
+    { src: "https://i.postimg.cc/50ysWnsX/IMG-1278.webp", title: "IMG 1278" },
+    { src: "https://i.postimg.cc/vBT0w301/IMG-1279.webp", title: "IMG 1279" },
+    { src: "https://i.postimg.cc/Y90dBbdG/IMG-1280.webp", title: "IMG 1280" },
+    { src: "https://i.postimg.cc/Jn0pCPpB/IMG-1281.webp", title: "IMG 1281" },
+    { src: "https://i.postimg.cc/tTJBG2Bx/IMG-1285.webp", title: "IMG 1285" },
+    { src: "https://i.postimg.cc/bJrmf3mk/IMG-1299.webp", title: "IMG 1299" },
+    { src: "https://i.postimg.cc/DZ0x3Bxq/IMG-1315.webp", title: "IMG 1315" },
+    { src: "https://i.postimg.cc/vBT0w30r/IMG-1316.webp", title: "IMG 1316" },
+    { src: "https://i.postimg.cc/TwsCdgsL/IMG-1317.webp", title: "IMG 1317" },
+    { src: "https://i.postimg.cc/V6vKPDKF/IMG-1321.webp", title: "IMG 1321" },
+    { src: "https://i.postimg.cc/cHzXxwzt/IMG-1329.webp", title: "IMG 1329" },
+    { src: "https://i.postimg.cc/C12mhk2b/IMG-1331.webp", title: "IMG 1331" },
+    { src: "https://i.postimg.cc/Y9PbrYP6/IMG-1434.webp", title: "IMG 1434" },
+    { src: "https://i.postimg.cc/KzWJGBWN/IMG-1452.webp", title: "IMG 1452" },
+    { src: "https://i.postimg.cc/26t2khtx/IMG-1456.webp", title: "IMG 1456" },
+    { src: "https://i.postimg.cc/85YtpMYt/IMG-1492.webp", title: "IMG 1492" },
+    { src: "https://i.postimg.cc/KzWJGBW9/IMG-1495.webp", title: "IMG 1495" },
+    { src: "https://i.postimg.cc/KzWJGBWq/IMG-1533.webp", title: "IMG 1533" },
+    { src: "https://i.postimg.cc/HxNBYXNv/IMG-1535.webp", title: "IMG 1535" },
+    { src: "https://i.postimg.cc/gJ7Nz87T/IMG-1537.webp", title: "IMG 1537" },
+    { src: "https://i.postimg.cc/FR6Dr36M/IMG-1538.webp", title: "IMG 1538" },
+    { src: "https://i.postimg.cc/G2fqLGfZ/IMG-1540.webp", title: "IMG 1540" },
+    { src: "https://i.postimg.cc/vBK3YfjF/IMG-1544.webp", title: "IMG 1544" },
+    { src: "https://i.postimg.cc/5yFp6jcR/IMG-1555.webp", title: "IMG 1555" },
+    { src: "https://i.postimg.cc/yxSnkWq2/IMG-1556.webp", title: "IMG 1556" },
+    { src: "https://i.postimg.cc/qqCQzgfP/IMG-1558.webp", title: "IMG 1558" },
+    { src: "https://i.postimg.cc/T1WQphM8/IMG-1559.webp", title: "IMG 1559" },
+    { src: "https://i.postimg.cc/qqCQzgVV/IMG-1560.webp", title: "IMG 1560" },
+    { src: "https://i.postimg.cc/T1WQphM6/IMG-1562.webp", title: "IMG 1562" },
+    { src: "https://i.postimg.cc/wMsF738H/IMG-1564.webp", title: "IMG 1564" },
+    { src: "https://i.postimg.cc/6qGzyTJ9/IMG-1586.webp", title: "IMG 1586" },
+    { src: "https://i.postimg.cc/1XNMf4hm/IMG-1600.webp", title: "IMG 1600" },
+    { src: "https://i.postimg.cc/FzJG715F/IMG-1628.webp", title: "IMG 1628" },
+    { src: "https://i.postimg.cc/yxSnkW4Y/IMG-1630.webp", title: "IMG 1630" },
+    { src: "https://i.postimg.cc/x8bgcqDC/IMG-1685.webp", title: "IMG 1685" },
+    { src: "https://i.postimg.cc/hv7MfhWf/IMG-1686.webp", title: "IMG 1686" },
+    { src: "https://i.postimg.cc/XqyxpXSZ/IMG-1687.webp", title: "IMG 1687" },
+    { src: "https://i.postimg.cc/6qGzyTJ8/IMG-1689.webp", title: "IMG 1689" },
+    { src: "https://i.postimg.cc/wMsF738y/IMG-1697.webp", title: "IMG 1697" },
+    { src: "https://i.postimg.cc/bdcgb8pv/IMG-1698.webp", title: "IMG 1698" },
+    { src: "https://i.postimg.cc/rzXjWcMs/IMG-1729.webp", title: "IMG 1729" },
+    { src: "https://i.postimg.cc/SjFd8qkc/IMG-1770.webp", title: "IMG 1770" },
+    { src: "https://i.postimg.cc/MX25Rxq5/IMG-1771.webp", title: "IMG 1771" },
+    { src: "https://i.postimg.cc/wxydhVgr/IMG-1830.webp", title: "IMG 1830" },
+    { src: "https://i.postimg.cc/qBhd8L4W/IMG-1831.webp", title: "IMG 1831" },
+    { src: "https://i.postimg.cc/nVjtvkpy/IMG-1832.webp", title: "IMG 1832" },
+    { src: "https://i.postimg.cc/7PGygVq8/IMG-1859.webp", title: "IMG 1859" },
+    { src: "https://i.postimg.cc/7PGygVqr/IMG-1860.webp", title: "IMG 1860" },
+    { src: "https://i.postimg.cc/DfJKqg7n/IMG-1862.webp", title: "IMG 1862" },
+    { src: "https://i.postimg.cc/nVjtvknn/IMG-1863.webp", title: "IMG 1863" }
+  ];
+
+  /* ── Build gallery (reversed order) ── */
+  const gallery = document.getElementById('gallery');
+  [...PHOTOS].reverse().forEach((p, i) => {
+    const item = document.createElement('div');
+    item.className = 'photem-item';
+    item.style.transitionDelay = (i % 6) * 0.06 + 's';
+    item.innerHTML = `
+      <img src="${p.src}" alt="${p.title}" loading="lazy">
+      <div class="photem-item-cap"><span class="photem-item-title">${p.title}</span></div>
+    `;
+    item.addEventListener('click', () => openLightbox(p));
+    gallery.appendChild(item);
+  });
+
+  /* ── Reveal on scroll ── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.photem-item').forEach(el => io.observe(el));
+
+  /* ── Lightbox ── */
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+
+  function openLightbox(p) {
+    lbImg.src = p.src;
+    lbImg.alt = p.title;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
