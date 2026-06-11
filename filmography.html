@@ -103,6 +103,19 @@
   </div>
 </div>
 
+<!-- STILLS CAROUSEL -->
+<section class="stills-section">
+  <div class="stills-head">
+    <p class="section-eyebrow">Selected Stills</p>
+    <div class="stills-nav">
+      <button class="stills-arrow" id="stillsPrev" aria-label="Previous">&#8592;</button>
+      <button class="stills-arrow" id="stillsNext" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+  <div class="stills-carousel" id="stillsCarousel"></div>
+  <p class="stills-hint">Scroll &nbsp;→&nbsp; drag or swipe</p>
+</section>
+
 <!-- FILMOGRAPHY -->
 <section class="filmography-section">
   <div class="filmography-inner">
@@ -726,6 +739,17 @@
   </div>
 </section>
 
+<!-- STILLS LIGHTBOX -->
+<div class="photem-lightbox" id="stillsLightbox">
+  <button class="lightbox-close" id="stillsClose">Close ✕</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-figure">
+      <img id="stillsLightboxImg" src="" alt="">
+      <div class="lightbox-caption" id="stillsCaption"></div>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -779,6 +803,166 @@
 
   window.addEventListener('scroll', updatePerforations, { passive: true });
   updatePerforations();
+
+  /* ════════════════════════════════════════════════
+     ║  STILLS CAROUSEL — paste image URLs below       ║
+     ════════════════════════════════════════════════ */
+  const STILLS = [
+    "https://i.postimg.cc/d0vFZxsL/T1-1-VETE-selection-002.jpg",
+    "https://i.postimg.cc/SKq4YvSz/T1-2-VETE-selection-001.jpg",
+    "https://i.postimg.cc/7LD4JWHG/T1-3-VETE-selection-003.jpg",
+    "https://i.postimg.cc/1zPSVjmF/T2-1-VETE-selection-012.jpg",
+    "https://i.postimg.cc/q70r65J8/T2-2-VETE-selection-011.jpg",
+    "https://i.postimg.cc/ZqcS8xnv/T2-3-VETE-selection-010.jpg",
+    "https://i.postimg.cc/N0Yt2zs8/T3-1-VETE-selection-017.jpg",
+    "https://i.postimg.cc/R09mJDSQ/T3-2-VETE-selection-016.jpg",
+    "https://i.postimg.cc/jjXbH42H/T3-3-VETE-selection-015.jpg",
+    "https://i.postimg.cc/nLkJ4Gr1/T4-1-VETE-selection-004.jpg",
+    "https://i.postimg.cc/YS3H6z03/T4-2-VETE-selection-006.jpg",
+    "https://i.postimg.cc/0NfsY0jV/T4-3-VETE-selection-008.jpg",
+    "https://i.postimg.cc/3wBTXFNf/T5-1-VETE-selection-009.jpg",
+    "https://i.postimg.cc/3wBTXFNb/T5-2-VETE-selection-005.jpg",
+    "https://i.postimg.cc/mrwsYykq/T5-3-VETE-selection-007.jpg",
+    "https://i.postimg.cc/d1VK4ZZH/T6-2-VETE-selection-013.jpg",
+    "https://i.postimg.cc/yd8zv33r/T6-3-VETE-selection-014.jpg",
+    "https://i.postimg.cc/FRHQDkk8/T6-3-VETE-selection-018.jpg",
+    "https://i.postimg.cc/rp86wRjS/the-End-001.jpg",
+    "https://i.postimg.cc/FK9tHkpy/the-End-002.jpg",
+    "https://i.postimg.cc/bvzXwSg1/the-End-003.jpg",
+    "https://i.postimg.cc/43JCxHPv/the-End-004.jpg",
+    "https://i.postimg.cc/q7kfv6wL/the-End-005.jpg",
+    "https://i.postimg.cc/VNYyk0gD/the-End-006.jpg",
+    "https://i.postimg.cc/ZqTk5vHj/the-End-007.jpg",
+    "https://i.postimg.cc/cJTpg1kY/the-End-008.jpg",
+    "https://i.postimg.cc/k5w06MYx/the-End-009.jpg",
+    "https://i.postimg.cc/nLTyjVSK/the-End-010.jpg",
+    "https://i.postimg.cc/d0nbkQNj/the-End-011.jpg",
+    "https://i.postimg.cc/nLTyjVSY/the-End-012.jpg",
+    "https://i.postimg.cc/mrVvzZpw/the-End-013.jpg",
+    "https://i.postimg.cc/LsvcY4Qv/the-End-014.jpg",
+    "https://i.postimg.cc/YS85G2DX/the-End-015.jpg",
+    "https://i.postimg.cc/3w9s4rfV/the-End-016.jpg",
+    "https://i.postimg.cc/FKGMdFC2/the-End-017.jpg",
+    "https://i.postimg.cc/PqKgpfFs/the-End-018.jpg",
+    "https://i.postimg.cc/jShxcbkZ/le-Grand-Gagnant-001.jpg",
+    "https://i.postimg.cc/x1Pf52Fp/le-Grand-Gagnant-002.jpg",
+    "https://i.postimg.cc/x1Pf52F6/le-Grand-Gagnant-003.jpg",
+    "https://i.postimg.cc/x1Pf52Fs/le-Grand-Gagnant-004.jpg",
+    "https://i.postimg.cc/5tNxkRZ5/le-Grand-Gagnant-005.jpg",
+    "https://i.postimg.cc/MGKWrFhD/le-Grand-Gagnant-006.jpg",
+    "https://i.postimg.cc/tJPyxQxb/Le-Diable-Au-Corps-001.jpg",
+    "https://i.postimg.cc/0NBqX2G5/iidllj-001.jpg",
+    "https://i.postimg.cc/mr5Gp23g/iidllj-002.jpg",
+    "https://i.postimg.cc/HLhCvs0L/iidllj-003.jpg",
+    "https://i.postimg.cc/ZqMhsKPR/iidllj-004.jpg",
+    "https://i.postimg.cc/d0xKNtRZ/iidllj-005.jpg",
+    "https://i.postimg.cc/zfc12XwW/iidllj-006.jpg",
+    "https://i.postimg.cc/BvVG7Q5K/iidllj-007.jpg",
+    "https://i.postimg.cc/QMyrYxgk/iidllj-008.jpg",
+    "https://i.postimg.cc/C1np3TJb/iidllj-009.jpg",
+    "https://i.postimg.cc/wvRYC8FL/iidllj-010.jpg",
+    "https://i.postimg.cc/yYyC4TX1/eva-Uni-001.jpg",
+    "https://i.postimg.cc/0201RCdP/eva-Uni-002.jpg",
+    "https://i.postimg.cc/dtjcP9mJ/eva-Uni-003.jpg",
+    "https://i.postimg.cc/yYyC4TXV/eva-Uni-004.jpg",
+    "https://i.postimg.cc/VksQYbD1/eva-Uni-005.jpg",
+    "https://i.postimg.cc/ncGfb1YX/eva-Uni-006.jpg",
+    "https://i.postimg.cc/cL1ys8Xd/eva-Uni-007.jpg",
+    "https://i.postimg.cc/kgM3ntfn/eva-Uni-008.jpg",
+    "https://i.postimg.cc/P5fst82f/eva-Uni-009.jpg",
+    "https://i.postimg.cc/9QX5WqJF/eva-Uni-010.jpg",
+    "https://i.postimg.cc/BnZ9q1Mn/eva-Uni-011.jpg",
+    "https://i.postimg.cc/VksQYbDd/eva-Uni-012.jpg",
+    "https://i.postimg.cc/kgM3ntf6/eva-Uni-013.jpg",
+    "https://i.postimg.cc/YC2Kpmbg/eva-Uni-014.jpg",
+    "https://i.postimg.cc/j2YmBWDN/a-Deadly-Wish-001.jpg",
+    "https://i.postimg.cc/NFvSZyK1/a-Deadly-Wish-002.jpg",
+    "https://i.postimg.cc/nrKgxHms/a-Deadly-Wish-003.jpg",
+    "https://i.postimg.cc/4yvqGJcm/a-Deadly-Wish-004.jpg",
+    "https://i.postimg.cc/qqcSrkKx/a-Deadly-Wish-005.jpg",
+    "https://i.postimg.cc/mk3J4b9N/a-Deadly-Wish-006.jpg",
+    "https://i.postimg.cc/C5CX0F8N/a-Deadly-Wish-007.jpg"
+  ];
+
+  const carousel = document.getElementById('stillsCarousel');
+
+  /* map a still's filename to its film title */
+  function filmOf(src) {
+    const f = src.split('/').pop();
+    if (/VETE/i.test(f))               return 'Voyage en têtes étrangères';
+    if (/^the-End/i.test(f))           return 'The End';
+    if (/le-Grand-Gagnant/i.test(f))   return 'Le Grand Gagnant';
+    if (/Le-Diable-Au-Corps/i.test(f)) return 'Le Diable Au Corps';
+    if (/iidllj/i.test(f))             return 'Io is dead, long live Jupiter';
+    if (/eva-Uni/i.test(f))            return 'Evanouissement Universel';
+    if (/a-Deadly-Wish/i.test(f))      return 'A Deadly Wish';
+    return '';
+  }
+
+  STILLS.forEach((src) => {
+    const film = filmOf(src);
+    const fig = document.createElement('div');
+    fig.className = 'still';
+    fig.innerHTML = `<img src="${src}" alt="${film || 'Film still'}" loading="lazy">` +
+                    (film ? `<span class="still-film">${film}</span>` : '');
+    fig.addEventListener('click', () => { if (!moved) openStill(src, film); });
+    carousel.appendChild(fig);
+  });
+
+  /* vertical wheel → horizontal scroll */
+  carousel.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      carousel.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
+
+  /* drag to scroll */
+  let isDown = false, startX = 0, startScroll = 0, moved = false;
+  carousel.addEventListener('pointerdown', (e) => {
+    isDown = true; moved = false;
+    startX = e.pageX;
+    startScroll = carousel.scrollLeft;
+    carousel.classList.add('dragging');
+    carousel.setPointerCapture(e.pointerId);
+  });
+  carousel.addEventListener('pointermove', (e) => {
+    if (!isDown) return;
+    const dx = e.pageX - startX;
+    if (Math.abs(dx) > 4) moved = true;
+    carousel.scrollLeft = startScroll - dx;
+  });
+  const endDrag = (e) => { isDown = false; carousel.classList.remove('dragging'); };
+  carousel.addEventListener('pointerup', endDrag);
+  carousel.addEventListener('pointercancel', endDrag);
+  carousel.addEventListener('pointerleave', endDrag);
+
+  /* arrow buttons */
+  function pageScroll(dir) {
+    carousel.scrollBy({ left: dir * carousel.clientWidth * 0.8, behavior: 'smooth' });
+  }
+  document.getElementById('stillsPrev').addEventListener('click', () => pageScroll(-1));
+  document.getElementById('stillsNext').addEventListener('click', () => pageScroll(1));
+
+  /* lightbox — enlarge on click */
+  const lbStills = document.getElementById('stillsLightbox');
+  const lbStillsImg = document.getElementById('stillsLightboxImg');
+  const lbStillsCap = document.getElementById('stillsCaption');
+
+  function openStill(src, film) {
+    lbStillsImg.src = src;
+    lbStillsImg.alt = film || 'Film still';
+    lbStillsCap.textContent = film || '';
+    lbStills.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeStill() {
+    lbStills.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('stillsClose').addEventListener('click', closeStill);
+  lbStills.addEventListener('click', (e) => { if (e.target === lbStills) closeStill(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeStill(); });
 </script>
 </body>
 </html>
