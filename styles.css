@@ -642,7 +642,7 @@
 
   /* wider container + clear of the 44px film-perforation strips → larger video */
   .reel-section .container {
-    max-width: 1100px;
+    max-width: 1340px;
     padding-left: 64px;
     padding-right: 64px;
   }
